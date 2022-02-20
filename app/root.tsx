@@ -9,6 +9,7 @@ import {
 import type { MetaFunction } from "remix";
 
 import Container from "~/components/container";
+import Navigation from "~/components/navigation";
 
 import styles from "./tailwind.css";
 
@@ -30,6 +31,7 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <Navigation />
         <Container>
           <Outlet />
         </Container>
