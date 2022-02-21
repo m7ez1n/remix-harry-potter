@@ -21,7 +21,7 @@ const Navigation = () => {
           <RemixLogo />
         </div>
 
-        <ul className="flex-auto hidden space-x-2 md:flex">
+        <ul className="flex-auto space-x-2 md:flex">
           <NavLink
             to="/characters"
             className={classNameActiveRoute(pathname === "/characters")}
