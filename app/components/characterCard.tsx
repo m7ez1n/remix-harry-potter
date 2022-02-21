@@ -17,39 +17,39 @@ const CharacterCard = ({
   nickname,
 }: Omit<CharacterProps, "id">) => (
   <div className="max-w-xs">
-    <div className="bg-white shadow-xl rounded-lg py-3">
-      <div className="photo-wrapper p-2">
+    <div className="relative bg-white border rounded">
+      <div className="p-2 photo-wrapper">
         <img
-          className="w-32 h-32 rounded-full mx-auto"
+          className="w-32 h-32 mx-auto rounded-full"
           src={image}
           alt={character}
         />
       </div>
 
       <div className="p-2">
-        <h3 className="text-center text-xl text-gray-900 font-medium leading-8">
+        <h3 className="text-xl font-medium leading-8 text-center text-gray-900">
           {character}
         </h3>
-        <div className="text-center text-gray-400 text-xs font-semibold">
+        <div className="text-xs font-semibold text-center text-gray-400">
           <p>{interpretedBy}</p>
         </div>
 
-        <table className="text-xs my-3">
+        <table className="my-3 text-xs">
           <tbody>
             <tr>
-              <td className="px-2 py-2 text-gray-500 font-semibold">
+              <td className="px-2 py-2 font-semibold text-gray-500">
                 Hogwarts House
               </td>
               <td className="px-2 py-2">{hogwartsHouse}</td>
             </tr>
             <tr>
-              <td className="px-2 py-2 text-gray-500 font-semibold">
+              <td className="px-2 py-2 font-semibold text-gray-500">
                 Nickname
               </td>
               <td className="px-2 py-2">{nickname}</td>
             </tr>
             <tr>
-              <td className="px-2 py-2 text-gray-500 font-semibold">
+              <td className="px-2 py-2 font-semibold text-gray-500">
                 Hogwarts Student
               </td>
               <td className="px-2 py-2">{hogwartsStudent ? "Yes" : "No"}</td>
