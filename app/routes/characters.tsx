@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import { LoaderFunction, useLoaderData } from "remix";
 
 import CharacterCard, { CharacterProps } from "~/components/characterCard";
@@ -29,12 +28,13 @@ export default function () {
   const { characters } = useLoaderData<LoaderCharacter>();
 
   return (
-    <section className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-6 gap-8">
+    <>
       {characters.map((character) => (
-        <Fragment key={`key-for-character-${character.id}`}>
-          <CharacterCard {...character} />
-        </Fragment>
+        <CharacterCard
+          {...character}
+          key={`key-for-character-${character.id}`}
+        />
       ))}
-    </section>
+    </>
   );
 }

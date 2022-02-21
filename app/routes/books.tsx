@@ -1,13 +1,7 @@
 import { Fragment } from "react";
 import { LoaderFunction, useLoaderData } from "remix";
 
-type BookProps = {
-  id: number;
-  title: string;
-  releaseDay: string;
-  author: string;
-  description: string;
-};
+import BookCard, { BookProps } from "~/components/bookCard";
 
 type LoaderBooks = {
   books: BookProps[];
@@ -35,12 +29,10 @@ export default function () {
   const { books } = useLoaderData<LoaderBooks>();
 
   return (
-    <section className="container grid gap-8 pt-6 mx-auto sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <>
       {books.map((book) => (
-        <Fragment key={`key-for-character-${book.id}`}>
-          <p>{book.title}</p>
-        </Fragment>
+        <BookCard key={`key-for-book-${book.id}`} {...book} />
       ))}
-    </section>
+    </>
   );
 }

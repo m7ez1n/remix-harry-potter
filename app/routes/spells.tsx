@@ -1,11 +1,7 @@
 import { Fragment } from "react";
 import { LoaderFunction, useLoaderData } from "remix";
 
-type SpellProps = {
-  id: number;
-  spell: string;
-  use: string;
-};
+import SpellCard, { SpellProps } from "~/components/spellCard";
 
 type LoaderSpells = {
   spells: SpellProps[];
@@ -33,12 +29,10 @@ export default function () {
   const { spells } = useLoaderData<LoaderSpells>();
 
   return (
-    <section className="container grid gap-8 pt-6 mx-auto sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <>
       {spells.map((spell) => (
-        <Fragment key={`key-for-character-${spell.id}`}>
-          <p>{spell.spell}</p>
-        </Fragment>
+        <SpellCard {...spell} key={`key-for-spell-${spell.id}`} />
       ))}
-    </section>
+    </>
   );
 }
