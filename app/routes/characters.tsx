@@ -7,9 +7,7 @@ type LoaderCharacter = {
 };
 
 export const loader: LoaderFunction = async () => {
-  const res = await fetch(
-    "https://fedeperin-harry-potter-api-en.herokuapp.com/characters"
-  );
+  const res = await fetch("http://hp-api.herokuapp.com/api/characters ");
 
   return {
     characters: await res.json(),
